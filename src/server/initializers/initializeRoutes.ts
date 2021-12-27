@@ -49,10 +49,11 @@ export default function initializeRoutes(router: Router): void {
 	router.use("/v1/admin/database", databaseRoutes);
 
 	// ? App Routes
+	router.use("/v1/app/gdpr", gdprRoutes);
 	router.use("/v1/app*", authRequired(roles.getRoleWithMinimumPermissionLevelByUserType(false)));
 	router.use("/v1/app/user", userAppRoutes);
 	router.use("/v1/app/feedback", feedbackAppRoutes);
-	router.use("/v1/app/gdpr", gdprRoutes);
+
 	// ? Development routes
 	if (!isProduction) router.use("/v1/debug", debugRoutes);
 

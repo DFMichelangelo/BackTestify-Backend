@@ -10,8 +10,6 @@ const generalSettingsRepository = new GeneralSettingsRepository();
  *    get:
  *      summary: Gets privacy policy
  *      tags: [GDPR]
- *      security:
- *          - cookieAuthAdmin: []
  *      responses:
  *        404:
  *          description: Cannot find data
@@ -32,8 +30,6 @@ router.get("/privacy-policy", async (req: Request, res: Response, next: NextFunc
  *    get:
  *      summary: Gets terms and conditions
  *      tags: [GDPR]
- *      security:
- *          - cookieAuthAdmin: []
  *      responses:
  *        404:
  *          description: Cannot find data
