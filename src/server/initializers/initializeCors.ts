@@ -4,7 +4,7 @@ import { isProduction, host } from "../../auxiliaries/server";
 import { Express } from "express";
 export default function initializeCors(app: Express): void {
 	let whitelist: string[];
-	if (isProduction) whitelist = ["https://localhost:3000/", process.env.WEBAPP_FRONTEND_URL as string, process.env.ADMIN_FRONTEND_URL as string, `http//${host}`];
+	if (isProduction) whitelist = [process.env.WEBAPP_FRONTEND_URL as string, process.env.ADMIN_FRONTEND_URL as string, `http//${host}`];
 	else
 		whitelist = [
 			`http://localhost:3000`, // ? Dev App
