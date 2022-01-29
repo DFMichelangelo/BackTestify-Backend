@@ -44,14 +44,14 @@ const transportsException: Array<winston.transports.ConsoleTransportInstance> = 
 }*/
 
 const winstonCustomLogger: winston.Logger = winston.createLogger({
-	level: process.env.LOG_LEVEL,
+	level: process.env.LOG_LEVEL as winston.level,
 	exitOnError: false,
 	transports: transportsLog,
 	exceptionHandlers: transportsException,
 });
 
 const winstonFileLogger: winston.Logger = winston.createLogger({
-	level: process.env.LOG_LEVEL,
+	level: process.env.LOG_LEVEL as winston.level,
 	exitOnError: false,
 	transports: [
 		rotationTransport,
