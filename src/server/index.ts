@@ -62,9 +62,7 @@ export default function createServer() {
 	app.use("/resources", express.static(path.join(__dirname, "../../resources")));
 
 	// ? Security middleware
-	//app.use(helmet({
-	//	crossOriginEmbedderPolicy: false,
-	//}));
+	app.use(helmet({ crossOriginEmbedderPolicy: false }));
 
 	// ? Set limit to API requests
 	const limit = rateLimit({
